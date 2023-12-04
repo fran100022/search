@@ -1,5 +1,3 @@
-
-// NON MODIFICARE QUESTO ARRAY!
 const jobs = [
   { title: "Marketing Intern", location: "US, NY, New York" },
   {
@@ -104,10 +102,9 @@ function searchJobs(title, location) {
     )
     }
   );
-  // objects 
-  // key:value
+
   console.log("the type of it is: " + results.jobTitle)
-  // length is a property already defined
+
   return {
     result: results,
     count: results.length
@@ -127,7 +124,6 @@ document.addEventListener('DOMContentLoaded', () =>{
     const location = locationInput.value 
     const searchResults = searchJobs(title, location)
 
-    // set to an empty string because we want to clear the previous results whenever a person search something
     resultContainer.innerHTML = ''
     if (searchResults.count > 0){
       const ul = document.createElement('ul')
@@ -135,7 +131,6 @@ document.addEventListener('DOMContentLoaded', () =>{
       searchResults.result.forEach( 
         (job) => {
           const li = document.createElement('li')
-          // template literals
           li.textContent = `Title of the job: ${job.title}, Location: ${job.location}`;
           ul.appendChild(li)
         }
